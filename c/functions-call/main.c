@@ -1,17 +1,22 @@
+#define  suma(a) a[0] + a[1]
+#define resta(a) a[0] - a[1]
+#define multi(a) a[0] * a[1]
 #include<stdio.h>
+
+
 
 void caso_option(char *caso){
     printf("a) SUMA\n");
     printf("b) RESTA\n");
     printf("c) MULTIPLICACION\n");
     printf("Que desea realizar?: ");
-    scanf("%c",caso);
+    *caso = getche();
 }
 
 void message(int *a){
 
     //FORMA #1 ---->*
-    printf("Ingrese valor #1: ");
+    printf("\nIngrese valor #1: ");
     scanf("%d",a);
     printf("Ingrese valor #2: ");
     scanf("%d",a+1);
@@ -23,53 +28,36 @@ void message(int *a){
     scanf("%d",&a[1]);*/
 }
 
-int suma(int *a){
-    return *a+(*(a+1));
-}
-int resta(int *a){
-    return *a-(*(a+1));
-}
-int multi(int *a){
-    return *a*(*(a+1));
-}
-int res,a[2];
-    char caso;
-    char again= 'Y';
-    char *p = &caso;
-
 int main(){
+    char again;
+    int a[2];
+    char caso;
     
-
-    printf("BIENVENIDO A CALCULADORA, LAS OPCIONES A CONTINUACION\n");
+    printf("\nBIENVENIDO A CALCULADORA, LAS OPCIONES A CONTINUACION\n");
         
-        caso_option(p);
-        switch (*p)
+        caso_option(&caso);
+        switch (caso)
         {
         case 'a':
             message(a);
-            res = suma(a);
-            printf("El resultado es: %d\n",res);
-            scanf("%c",p);
+            printf("El resultado es: %d\n\n",suma(a));
             break;
         case 'b':
             message(a);
-            res = resta(a);
-            printf("El resultado es: %d\n",res);
+            printf("El resultado es: %d\n\n",resta(a));
             break;
         case 'c':
             message(a);
-            res = multi(a);
-            printf("El resultado es: %d\n",res);
+            printf("El resultado es: %d\n\n",multi(a));
             break;
         
         default: printf("Valor no valido.\n");
             break;
         }
 
-        printf("Desea hacer otra operacion? -> Y|N : ");
-        scanf("%c",&again);
-        if(again=='Y' || again=='y') main();
-        //printf("Otra? %c\n",again);
+        printf("Desea hacer otra operacion? -> si = y : ");
+        again = getche();
+        if(again == 'Y' || again == 'y') main();
 
     return 0;
 }
