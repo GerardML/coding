@@ -30,7 +30,7 @@ int main(){
             printf("El resultado es: %d\n",multi(a));
             break;
         
-        default: printf("\nValor no valido.\n");
+        default: printf("\nValor no valido.");
             break;
         }
         
