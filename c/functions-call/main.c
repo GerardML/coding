@@ -8,6 +8,7 @@ void caso_option(char *caso);
 void message(int *a);
     
 int main(){
+    system("cls");
     int a[2];
     char caso;
     
