@@ -12,7 +12,6 @@ int main(){
     int a[2];
     char caso;
     
-    //printf("\nagain: %c",again);
     printf("\nBIENVENIDO A CALCULADORA, LAS OPCIONES A CONTINUACION\n");
         
         caso_option(&caso);
@@ -31,7 +30,7 @@ int main(){
             printf("El resultado es: %d\n",multi(a));
             break;
         
-        default: printf("Valor no valido.\n");
+        default: printf("\nValor no valido.");
             break;
         }
         
